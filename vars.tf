@@ -14,10 +14,6 @@ variable "cluster_name" {
   default = "animals-mongo"
 }
 
-variable "org_id" {
-  description = "MongoDB Organization ID"
-}
-
 variable "region" {
   description = "MongoDB Atlas Cluster Region"
   type        = string
