@@ -12,10 +12,9 @@ resource "mongodbatlas_database_user" "users" {
   auth_database_name = each.value.mongoDatabase
 
   dynamic roles {
-    #for_each = {
-     # for role in toset(each.value.mongoCollection) : "${each.value.mongoCollection}-" => role
-    #}
-    for_each = each.value.mongoCollection[*]
+    for_each = {
+      for role in toset(each.value.mongoCollection) : "${each.value.mongoCollection}-" => role
+    }
     content {
       collection_name = roles.value
       role_name     = "read"
