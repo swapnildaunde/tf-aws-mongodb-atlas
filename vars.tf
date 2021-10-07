@@ -14,22 +14,6 @@ variable "cluster_name" {
   default = "animals-mongo"
 }
 
-variable "user" {
-  description = "MongoDB Atlas User"
-  type        = list(string)
-  default     = ["asfa","sfafg"]
-}
-variable "password" {
-  description = "MongoDB Atlas User Password"
-  type        = list(string)
-  default = [ "Aa123456" ]
-}
-variable "database_name" {
-  description = "The Database in the cluster"
-  type        = list(string)
-  default = ["aaa"]
-}
-
 variable "org_id" {
   description = "MongoDB Organization ID"
 }
